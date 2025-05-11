@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  watchForFileChanges: false,
   projectId: 'h3m3vo',
   e2e: {
     video: true,
