@@ -1,0 +1,33 @@
+# Dependency directories
+node_modules/
+
+# WebStorm specific
+.idea/
+*.iml
+.workspace/
+
+# Cypress artifacts
+downloads/
+screenshots/
+videos
+
+# Version control
+.git/
+.gitignore
+
+# Logs and temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Optional (cache and local configs)
+cypress.env.json
+.temp/
+.cache/
+dist/
