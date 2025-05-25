@@ -15,5 +15,4 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-// Hover and Mouse click
-import "cypress-real-events";
+import 'cypress-real-events/support'
