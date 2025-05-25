@@ -20,6 +20,9 @@
   "homepage": "https://github.com/shivaghanbari/Cypress#readme",
   "description": "",
   "devDependencies": {
-    "cypress": "^14.1.0"
+    "cypress": "^14.4.0"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.14.0"
   }
 }
