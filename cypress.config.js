@@ -7,6 +7,8 @@ module.exports = defineConfig({
     video: true,
     videosFolder: "/Users/shiva/Cypress/video",
     // Add these for better realPress support
+    screenshotsFolder: 'cypress/screenshots',
+    reporter: 'spec',
     chromeWebSecurity: false,
     modifyObstructiveCode: false,
     defaultCommandTimeout: 10000,
