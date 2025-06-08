@@ -1,14 +1,15 @@
-# Force x64 architecture for compatibility (even on ARM Macs)
-FROM --platform=linux/amd64 cypress/included:14.1.0
+# Force x64 architecture for Apple Silicon compatibility
+FROM --platform=linux/amd64 cypress/included:14.4.1
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Install dependencies (use --omit=dev if needed)
+# Copy and install only necessary files first (for caching)
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Copy project files
+# Copy the rest of the test project
 COPY . .
 
-# Set CORRECT binary path for x64 emulation
-ENV CYPRESS_RUN_BINARY=/root/.cache/Cypress/14.1.0/Cypress/Cypress
+# Run tests when container starts
+CMD ["npx","cypress", "run"]
