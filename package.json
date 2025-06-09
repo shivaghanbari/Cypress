@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cypress run --reporter mocha-junit-reporter",
     "cy:open": "cypress open"
   },
   "private": true,
@@ -21,6 +21,7 @@
   "description": "",
   "devDependencies": {
     "cypress": "^14.4.0",
-    "cypress-real-events": "^1.14.0"
+    "cypress-real-events": "^1.14.0",
+    "mocha-junit-reporter": "^2.2.0"
   }
 }

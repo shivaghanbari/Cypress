@@ -1,5 +1,5 @@
 # Force x64 architecture for Apple Silicon compatibility
-FROM --platform=linux/amd64 cypress/included:14.4.1
+FROM cypress/included:14.4.1
 
 # Set working directory inside the container
 WORKDIR /app
@@ -13,3 +13,5 @@ COPY . .
 
 # Run tests when container starts
 CMD ["npx","cypress", "run"]
+
+

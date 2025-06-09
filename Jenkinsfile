@@ -1,28 +1,28 @@
 pipeline {
     agent any
-    
-    environment {
-        DOCKER_HOST = "unix:///var/run/docker.sock"
-    }
-    
-    stages {
-        stage('Run Cypress') {
+
+  environment {
+        DOCKER_IMAGE = 'cypress-docker-ci'
+  }
+
+  stages {
+        stage('Build Docker Image') {
             steps {
-                script {
-                    // Simple direct docker run (no docker.inside)
-                    sh '''
-                    docker run --rm \
-                      -v $PWD:/e2e -w /e2e \
-                      cypress/included:14.4.1
-                    '''
-                }
-            }
-        }
+                sh 'docker build -t $DOCKER_IMAGE .'
+      }
     }
-    
-    post {
+
+    stage('Run Cypress Tests in Docker') {
+            steps {
+                sh 'docker run --rm $DOCKER_IMAGE'
+      }
+    }
+  }
+
+  post {
         always {
-            archiveArtifacts artifacts: 'cypress/videos/*.mp4,cypress/screenshots/*.png'
-        }
+            echo 'Pipeline finished. Collect logs or results here if needed.'
+            junit 'cypress/results/*.xml'
     }
+  }
 }
