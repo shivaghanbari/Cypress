@@ -3,11 +3,6 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   watchForFileChanges: false,
   projectId: 'h3m3vo',
-  reporter: 'junit',
-  reporterOptions: {
-    mochaFile: 'cypress/results/results-[hash].xml',
-    toConsole: true
-  },
   e2e: {
     specPattern: 'cypress/E2E/**/*.cy.{js,jsx,ts,tsx}', // ✅ Add this line
     video: true,
