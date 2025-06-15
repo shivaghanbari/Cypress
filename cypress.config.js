@@ -9,7 +9,7 @@ module.exports = defineConfig({
     toConsole: true
   },
   e2e: {
-    specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}', // ✅ Add this line
+    specPattern: 'cypress/E2E/**/*.cy.{js,jsx,ts,tsx}', // ✅ Add this line
     video: true,
     videosFolder: "cypress/videos",
     screenshotsFolder: 'cypress/screenshots',
